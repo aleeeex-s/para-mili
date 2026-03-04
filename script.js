@@ -63,5 +63,9 @@ btn_download.click(function () {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-
+  
+#download {
+  display: none;
+}
+  
 });
