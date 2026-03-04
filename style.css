@@ -229,8 +229,7 @@
   }
 }
 body {
-  background-color: #f0e6f6; /* Soft lavender for a romantic, dreamy feel */
-}
+background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);}
 
 .envlope-wrapper {
   height: 380px;
@@ -264,3 +263,4 @@ body {
   background-color: #d9534f;
   color: #fff;
 }
+
