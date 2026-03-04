@@ -243,6 +243,14 @@ body{
   background-repeat: no-repeat;
 }
 
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0, 15, 40, 0.55); /* azul oscuro encima */
+  z-index:-1;
+}
+
 .envlope-wrapper {
   height: 380px;
 }
@@ -275,6 +283,7 @@ body{
   background-color: #d9534f;
   color: #fff;
 }
+
 
 
 
