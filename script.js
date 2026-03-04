@@ -42,8 +42,8 @@ $(document).ready(function () {
     const star = document.createElement("div");
     star.className = "shooting-star";
 
-    star.style.top = (window.innerHeight * 0.25) + "px";
-    star.style.left = "-400px";
+    star.style.top = "-50px";
+    star.style.left = "-50px";
 
     document.body.appendChild(star);
 
@@ -54,3 +54,4 @@ $(document).ready(function () {
   }
 
 });
+
