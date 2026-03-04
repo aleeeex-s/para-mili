@@ -385,7 +385,7 @@ body::before{
 
 @keyframes shoot {
   0% {
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
     opacity: 0;
   }
 
@@ -398,7 +398,7 @@ body::before{
   }
 
   100% {
-    transform: translate(var(--end-x), var(--end-y));
+    transform: translate3d(120vw, 60vh, 0);
     opacity: 0;
   }
 }
@@ -446,5 +446,6 @@ body::before,
   position: relative;
   z-index: 10;
 }
+
 
 
