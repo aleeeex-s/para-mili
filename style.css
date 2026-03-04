@@ -423,3 +423,26 @@ body::before{
 
   filter:blur(4px);
 }
+
+/* ORDEN DE CAPAS DEFINITIVO */
+
+body::before,
+.stars,
+.stars2,
+.stars3{
+  z-index: 0;
+}
+
+.shooting-star{
+  z-index: 1;
+}
+
+#envelope{
+  position: relative;
+  z-index: 5;
+}
+
+.reset{
+  position: relative;
+  z-index: 10;
+}
