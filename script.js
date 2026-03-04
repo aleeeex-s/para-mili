@@ -3,7 +3,10 @@ $(document).ready(function () {
   var envelope = $("#envelope");
   var btn_open = $("#open");
   var btn_reset = $("#reset");
-  var isOpen = false; // control manual
+  var isOpen = false;
+
+  // 🔥 ESTADO INICIAL
+  envelope.addClass("close");
 
   envelope.click(function () {
     openEnvelope();
@@ -20,7 +23,7 @@ $(document).ready(function () {
   function openEnvelope() {
 
     if (!isOpen) {
-      envelope.addClass("open").removeClass("close");
+      envelope.removeClass("close").addClass("open");
       createShootingStar();
       isOpen = true;
     }
@@ -29,23 +32,25 @@ $(document).ready(function () {
 
   function closeEnvelope() {
 
-    envelope.addClass("close").removeClass("open");
+    envelope.removeClass("open").addClass("close");
     isOpen = false;
 
   }
 
-function createShootingStar(){
+  function createShootingStar(){
 
-  const star = document.createElement("div");
-  star.className = "shooting-star";
+    const star = document.createElement("div");
+    star.className = "shooting-star";
 
-  star.style.top = (window.innerHeight * 0.25) + "px";
-  star.style.left = "-400px";
+    star.style.top = (window.innerHeight * 0.25) + "px";
+    star.style.left = "-400px";
 
-  document.body.appendChild(star);
+    document.body.appendChild(star);
 
-  setTimeout(function(){
-    star.remove();
-  },8000);
+    setTimeout(function(){
+      star.remove();
+    },8000);
 
-}
+  }
+
+});
