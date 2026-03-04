@@ -272,18 +272,18 @@ body::before{
 /* PEQUEÑAS (muchas) */
 .stars {
   box-shadow:
-    10vw 20vh 1px white,
-    30vw 80vh 1px white,
-    50vw 40vh 1px white,
-    70vw 60vh 1px white,
-    90vw 10vh 1px white,
-    15vw 70vh 1px white,
-    40vw 30vh 1px white,
-    80vw 90vh 1px white,
-    25vw 50vh 1px white,
-    60vw 15vh 1px white,
-    75vw 85vh 1px white,
-    5vw 40vh 1px white;
+    10vw 20vh 2px white,
+    30vw 80vh 2px white,
+    50vw 40vh 2px white,
+    70vw 60vh 2px white,
+    90vw 10vh 2px white,
+    15vw 70vh 2px white,
+    40vw 30vh 2px white,
+    80vw 90vh 2px white,
+    25vw 50vh 2px white,
+    60vw 15vh 2px white,
+    75vw 85vh 2px white,
+    5vw 40vh 2px white;
   animation: twinkleSmall 4s infinite alternate;
   opacity: 0.5;
 }
@@ -291,11 +291,11 @@ body::before{
 /* MEDIANAS */
 .stars2 {
   box-shadow:
-    20vw 30vh 2px white,
-    60vw 70vh 2px white,
-    85vw 50vh 2px white,
-    35vw 15vh 2px white,
-    50vw 80vh 2px white;
+    20vw 30vh 4px white,
+    60vw 70vh 4px white,
+    85vw 50vh 4px white,
+    35vw 15vh 4px white,
+    50vw 80vh 4px white;
   animation: twinkleMedium 6s infinite alternate;
   opacity: 0.7;
 }
@@ -303,9 +303,12 @@ body::before{
 /* GRANDES */
 .stars3 {
   box-shadow:
-    25vw 60vh 3px white,
-    75vw 25vh 3px white,
-    40vw 10vh 3px white;
+    25vw 60vh 8px white,
+    75vw 25vh 8px white,
+    40vw 10vh 8px white;
+    25vw 60vh 8px white,
+    75vw 25vh 8px white,
+    40vw 10vh 8px white;
   animation: twinkleBig 8s infinite alternate;
   opacity: 0.9;
 }
@@ -434,3 +437,4 @@ body::before{
 
   filter:blur(4px);
 }
+
