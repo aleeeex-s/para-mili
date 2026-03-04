@@ -6,7 +6,7 @@ $(document).ready(function () {
   var btn_download = $("#download");
 
   envelope.addClass("close");
-  btn_download.hide(); // oculto al inicio
+  btn_download.hide();
 
   envelope.click(function () {
     openEnvelope();
@@ -21,45 +21,35 @@ $(document).ready(function () {
   });
 
   function openEnvelope() {
-
     envelope.removeClass("close").addClass("open");
     createShootingStar();
     btn_download.fadeIn(300);
-
   }
 
   function closeEnvelope() {
-
     envelope.removeClass("open").addClass("close");
     btn_download.fadeOut(300);
-
   }
 
-  function createShootingStar(){
-
+  function createShootingStar() {
     const star = document.createElement("div");
     star.className = "shooting-star";
-
     star.style.top = "-50px";
     star.style.left = "-50px";
-
     document.body.appendChild(star);
 
-    setTimeout(function(){
+    setTimeout(function () {
       star.remove();
-    },8000);
-
+    }, 8000);
   }
 
   btn_download.click(function () {
-
     const link = document.createElement("a");
     link.href = "cartarecuerdo-mili.mp4";
     link.download = "Para_Milagros.mp4";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
   });
 
 });
