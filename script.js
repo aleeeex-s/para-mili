@@ -34,20 +34,29 @@ $(document).ready(function () {
 
   }
 
-  function createShootingStar(){
+function createShootingStar(){
 
-    const star = document.createElement("div");
-    star.className = "shooting-star";
+  const star = document.createElement("div");
+  star.className = "shooting-star";
 
-    star.style.top = Math.random() * 30 + 10 + "%";
+  // Punto inicial (siempre fuera a la izquierda)
+  const startY = window.innerHeight * 0.25;
 
-    document.body.appendChild(star);
+  // Punto final (siempre hacia abajo a la derecha)
+  const endX = window.innerWidth * 1.2;
+  const endY = window.innerHeight * 0.5;
 
-    setTimeout(function(){
-      star.remove();
-    },8000);
+  star.style.top = startY + "px";
+  star.style.left = "-300px";
 
-  }
+  // Variables dinámicas para CSS
+  star.style.setProperty("--end-x", endX + "px");
+  star.style.setProperty("--end-y", endY + "px");
 
-});
+  document.body.appendChild(star);
 
+  setTimeout(function(){
+    star.remove();
+  },8000);
+
+}
