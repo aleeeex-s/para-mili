@@ -34,6 +34,6 @@ $(document).ready(function () {
 
     setTimeout(function(){
       star.remove();
-    },1800);
+    },8000);
   }
 });
