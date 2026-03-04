@@ -3,14 +3,9 @@ $(document).ready(function () {
   var envelope = $("#envelope");
   var btn_open = $("#open");
   var btn_reset = $("#reset");
-  var isOpen = false;
+  var btn_download = $("#download");
 
-  // 🔥 ESTADO INICIAL
   envelope.addClass("close");
-
-  envelope.click(function () {
-    openEnvelope();
-  });
 
   btn_open.click(function () {
     openEnvelope();
@@ -22,18 +17,17 @@ $(document).ready(function () {
 
   function openEnvelope() {
 
-    if (!isOpen) {
-      envelope.removeClass("close").addClass("open");
-      createShootingStar();
-      isOpen = true;
-    }
+    envelope.removeClass("close").addClass("open");
+
+    btn_download.fadeIn(300); // 🔥 aparece suavemente
 
   }
 
   function closeEnvelope() {
 
     envelope.removeClass("open").addClass("close");
-    isOpen = false;
+
+    btn_download.fadeOut(300); // 🔥 desaparece
 
   }
 
@@ -69,3 +63,4 @@ btn_download.click(function () {
 }
   
 });
+
