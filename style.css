@@ -236,28 +236,22 @@ body{
   align-items:center;
   justify-content:center;
   font-family:Arial, sans-serif;
-  background:#061427; /* azul marino profundo cinematográfico */
+  background:#061427; /* azul marino profundo */
   overflow:hidden;
+  position:relative;
 }
 
-/* CAPA PRINCIPAL - LUCES GRANDES */
+/* NEBLINA CINEMÁTICA SUAVE */
 body::before{
   content:"";
   position:fixed;
-  inset:0;
+  inset:-20%;
   pointer-events:none;
-
-  background-image:
-    radial-gradient(8px 8px at 20% 30%, rgba(255,255,255,1), transparent),
-    radial-gradient(10px 10px at 70% 20%, rgba(255,255,255,1), transparent),
-    radial-gradient(7px 7px at 40% 80%, rgba(255,255,255,1), transparent),
-    radial-gradient(9px 9px at 85% 70%, rgba(255,255,255,1), transparent);
-
-  filter: drop-shadow(0 0 15px rgba(255,255,255,1));
-  animation: floatFree 60s infinite alternate ease-in-out;
+  background: radial-gradient(circle at 50% 50%, rgba(20,40,90,0.4), transparent 70%);
+  animation: mist 30s infinite alternate ease-in-out;
 }
 
-/* CAPA SECUNDARIA - LUCES SUAVES */
+/* LUCES MÁGICAS */
 body::after{
   content:"";
   position:fixed;
@@ -265,28 +259,37 @@ body::after{
   pointer-events:none;
 
   background-image:
-    radial-gradient(5px 5px at 30% 50%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(6px 6px at 60% 40%, rgba(255,255,255,0.9), transparent);
+    radial-gradient(10px 10px at 20% 30%, rgba(255,255,255,1), transparent),
+    radial-gradient(12px 12px at 75% 25%, rgba(180,220,255,1), transparent),
+    radial-gradient(9px 9px at 40% 80%, rgba(255,255,255,1), transparent),
+    radial-gradient(11px 11px at 85% 70%, rgba(200,230,255,1), transparent),
+    radial-gradient(8px 8px at 60% 50%, rgba(255,255,255,1), transparent);
 
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
-  animation: floatFree2 80s infinite alternate ease-in-out;
+  filter: drop-shadow(0 0 18px rgba(255,255,255,0.9));
+  animation: floatMagic 70s infinite alternate ease-in-out,
+             twinkle 4s infinite alternate ease-in-out;
 }
 
-/* MOVIMIENTO LIBRE CINEMÁTICO */
-@keyframes floatFree{
+/* MOVIMIENTO LIBRE */
+@keyframes floatMagic{
   0%   { transform: translate(0px,0px) scale(1); }
-  25%  { transform: translate(-40px,20px) scale(1.05); }
-  50%  { transform: translate(30px,-30px) scale(1); }
+  25%  { transform: translate(-40px,30px) scale(1.05); }
+  50%  { transform: translate(35px,-25px) scale(1); }
   75%  { transform: translate(-20px,40px) scale(1.08); }
-  100% { transform: translate(40px,-20px) scale(1); }
+  100% { transform: translate(30px,-30px) scale(1); }
 }
 
-@keyframes floatFree2{
-  0%   { transform: translate(0px,0px); }
-  50%  { transform: translate(-30px,25px); }
-  100% { transform: translate(30px,-25px); }
+/* PARPADEO SUAVE */
+@keyframes twinkle{
+  from{ opacity:0.6; }
+  to{ opacity:1; }
 }
 
+/* NEBLINA EN MOVIMIENTO */
+@keyframes mist{
+  0%   { transform: translate(-20px,-20px); }
+  100% { transform: translate(20px,20px); }
+}
 
 .envlope-wrapper {
   height: 380px;
@@ -320,6 +323,7 @@ body::after{
   background-color: #d9534f;
   color: #fff;
 }
+
 
 
 
