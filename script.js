@@ -22,15 +22,16 @@ $(document).ready(function () {
     envelope.addClass("close").removeClass("open");
   }
   
-  function createShootingStar(){
-    const star = document.createElement("div");
-    star.classList.add("shooting-star");
-    document.body.appendChild(star);
+function createShootingStar(){
+  const star = document.createElement("div");
+  star.classList.add("shooting-star");
 
-    star.style.animation = "shoot 1.5s ease-out forwards";
+  // posición vertical aleatoria
+  star.style.top = Math.random() * 30 + 10 + "%";
 
-    setTimeout(function(){
-      star.remove();
-    },1500);
-  }
-});
+  document.body.appendChild(star);
+
+  setTimeout(function(){
+    star.remove();
+  },1800);
+}
