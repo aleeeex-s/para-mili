@@ -236,16 +236,37 @@ body{
   align-items:center;
   justify-content:center;
   font-family:Arial, sans-serif;
-  background-color:#0b1f3a;
+  background:#081c2d; /* azul marino profundo */
+  overflow:hidden;
+}
+
+/* Capa de luces */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
 
   background-image:
-    repeating-linear-gradient(
-      45deg,
-      rgba(255,255,255,0.02),
-      rgba(255,255,255,0.02) 2px,
-      transparent 2px,
-      transparent 6px
-    );
+    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 70% 60%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 85% 20%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 10% 70%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 55% 15%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 90% 85%, rgba(255,255,255,0.9), transparent);
+
+  animation: twinkle 4s infinite alternate;
+}
+
+/* Animación LED */
+@keyframes twinkle{
+  from{
+    opacity:0.4;
+  }
+  to{
+    opacity:1;
+  }
 }
 
 .envlope-wrapper {
@@ -280,3 +301,4 @@ body{
   background-color: #d9534f;
   color: #fff;
 }
+
