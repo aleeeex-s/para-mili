@@ -263,9 +263,16 @@ body::after{
     radial-gradient(12px 12px at 75% 25%, rgba(180,220,255,1), transparent),
     radial-gradient(9px 9px at 40% 80%, rgba(255,255,255,1), transparent),
     radial-gradient(11px 11px at 85% 70%, rgba(200,230,255,1), transparent),
-    radial-gradient(8px 8px at 60% 50%, rgba(255,255,255,1), transparent);
+    radial-gradient(8px 8px at 60% 50%, rgba(255,255,255,1), transparent),
 
-  filter: drop-shadow(0 0 18px rgba(255,255,255,0.9));
+    /* 5 NUEVAS */
+    radial-gradient(9px 9px at 15% 60%, rgba(200,230,255,1), transparent),
+    radial-gradient(10px 10px at 50% 20%, rgba(255,255,255,1), transparent),
+    radial-gradient(8px 8px at 90% 40%, rgba(180,220,255,1), transparent),
+    radial-gradient(11px 11px at 35% 10%, rgba(255,255,255,1), transparent),
+    radial-gradient(9px 9px at 70% 85%, rgba(200,230,255,1), transparent);
+
+  filter: drop-shadow(0 0 20px rgba(255,255,255,1));
   animation: floatMagic 70s infinite alternate ease-in-out,
              twinkle 4s infinite alternate ease-in-out;
 }
@@ -323,6 +330,7 @@ body::after{
   background-color: #d9534f;
   color: #fff;
 }
+
 
 
 
