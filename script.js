@@ -45,8 +45,9 @@ $(document).ready(function () {
 
     setTimeout(function(){
       star.remove();
-    },5000);
+    },8000);
 
   }
 
 });
+
