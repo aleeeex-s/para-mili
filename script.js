@@ -58,9 +58,4 @@ btn_download.click(function () {
   link.click();
   document.body.removeChild(link);
   
-#download {
-  display: none;
-}
-  
 });
-
