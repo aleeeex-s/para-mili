@@ -53,5 +53,15 @@ $(document).ready(function () {
 
   }
 
-});
+var btn_download = $("#download");
 
+btn_download.click(function () {
+
+  const link = document.createElement("a");
+  link.href = "cartarecuerdo-mili.mp4"; // mismo nombre que el archivo
+  link.download = "Para_Milagros.mp4";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+});
