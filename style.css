@@ -265,9 +265,9 @@ body::before{
   pointer-events: none;
 }
 
-.stars { z-index: 0; }
-.stars2 { z-index: 0; }
-.stars3 { z-index: 0; }
+.stars { z-index: 1; }
+.stars2 { z-index: 1; }
+.stars3 { z-index: 1; }
 
 /* PEQUEÑAS (muchas) */
 .stars {
@@ -434,7 +434,3 @@ body::before{
 
   filter:blur(4px);
 }
-
-
-
-
