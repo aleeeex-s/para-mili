@@ -1,7 +1,9 @@
 $(document).ready(function () {
+
   var envelope = $("#envelope");
   var btn_open = $("#open");
   var btn_reset = $("#reset");
+  var isOpen = false; // control manual
 
   envelope.click(function () {
     openEnvelope();
@@ -15,19 +17,25 @@ $(document).ready(function () {
     closeEnvelope();
   });
 
-    // Solo si NO está abierta todavía
-  if (!envelope.hasClass("open")) {
-    envelope.addClass("open").removeClass("close");
-    createShootingStar();
+  function openEnvelope() {
+
+    if (!isOpen) {
+      envelope.addClass("open").removeClass("close");
+      createShootingStar();
+      isOpen = true;
+    }
+
   }
 
-}
-
   function closeEnvelope() {
+
     envelope.addClass("close").removeClass("open");
+    isOpen = false;
+
   }
 
   function createShootingStar(){
+
     const star = document.createElement("div");
     star.className = "shooting-star";
 
@@ -37,7 +45,8 @@ $(document).ready(function () {
 
     setTimeout(function(){
       star.remove();
-    },8000);
-  }
-});
+    },5000);
 
+  }
+
+});
