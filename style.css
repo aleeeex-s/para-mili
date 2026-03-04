@@ -333,40 +333,53 @@ body::after{
 
 .shooting-star{
   position:fixed;
-  top:20%;
-  left:-200px;
-  width:3px;
-  height:3px;
+  top:15%;
+  left:-300px;
+  width:4px;
+  height:4px;
   background:white;
-  box-shadow:0 0 15px white, 0 0 30px white;
   border-radius:50%;
   pointer-events:none;
   z-index:9999;
+
+  box-shadow:
+    0 0 10px white,
+    0 0 20px white,
+    0 0 40px rgba(180,220,255,1);
+
+  animation: shoot 1.8s cubic-bezier(.2,.6,.3,1) forwards;
 }
 
+/* COLA FANTASIOSA */
 .shooting-star::after{
   content:"";
   position:absolute;
-  top:0;
-  left:-150px;
-  width:150px;
-  height:2px;
-  background:linear-gradient(to right, transparent, white);
+  top:50%;
+  left:-250px;
+  transform:translateY(-50%);
+  width:250px;
+  height:3px;
+
+  background:linear-gradient(
+    to right,
+    transparent,
+    rgba(180,220,255,0.4),
+    white
+  );
+
+  filter:blur(2px);
 }
 
 @keyframes shoot{
   0%{
-    transform:translate(0,0);
+    transform:translate(0,0) scale(1);
+    opacity:1;
+  }
+  70%{
     opacity:1;
   }
   100%{
-    transform:translate(120vw,60vh);
+    transform:translate(140vw,70vh) scale(1.2);
     opacity:0;
   }
 }
-
-
-
-
-
-
