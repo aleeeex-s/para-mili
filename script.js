@@ -6,6 +6,11 @@ $(document).ready(function () {
   var btn_download = $("#download");
 
   envelope.addClass("close");
+  btn_download.hide(); // oculto al inicio
+
+  envelope.click(function () {
+    openEnvelope();
+  });
 
   btn_open.click(function () {
     openEnvelope();
@@ -18,16 +23,15 @@ $(document).ready(function () {
   function openEnvelope() {
 
     envelope.removeClass("close").addClass("open");
-
-    btn_download.fadeIn(300); // 🔥 aparece suavemente
+    createShootingStar();
+    btn_download.fadeIn(300);
 
   }
 
   function closeEnvelope() {
 
     envelope.removeClass("open").addClass("close");
-
-    btn_download.fadeOut(300); // 🔥 desaparece
+    btn_download.fadeOut(300);
 
   }
 
@@ -47,15 +51,15 @@ $(document).ready(function () {
 
   }
 
-var btn_download = $("#download");
+  btn_download.click(function () {
 
-btn_download.click(function () {
+    const link = document.createElement("a");
+    link.href = "cartarecuerdo-mili.mp4";
+    link.download = "Para_Milagros.mp4";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
-  const link = document.createElement("a");
-  link.href = "cartarecuerdo-mili.mp4"; // mismo nombre que el archivo
-  link.download = "Para_Milagros.mp4";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  
+  });
+
 });
