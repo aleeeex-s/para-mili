@@ -39,19 +39,8 @@ function createShootingStar(){
   const star = document.createElement("div");
   star.className = "shooting-star";
 
-  // Punto inicial (siempre fuera a la izquierda)
-  const startY = window.innerHeight * 0.25;
-
-  // Punto final (siempre hacia abajo a la derecha)
-  const endX = window.innerWidth * 1.2;
-  const endY = window.innerHeight * 0.5;
-
-  star.style.top = startY + "px";
-  star.style.left = "-300px";
-
-  // Variables dinámicas para CSS
-  star.style.setProperty("--end-x", endX + "px");
-  star.style.setProperty("--end-y", endY + "px");
+  star.style.top = (window.innerHeight * 0.25) + "px";
+  star.style.left = "-400px";
 
   document.body.appendChild(star);
 
