@@ -240,7 +240,7 @@ body{
   overflow:hidden;
 }
 
-/* CAPA DE LEDS GRANDES */
+/* CIELO ESTRELLADO SUAVE */
 body::before{
   content:"";
   position:fixed;
@@ -248,20 +248,18 @@ body::before{
   pointer-events:none;
 
   background-image:
-    radial-gradient(6px 6px at 10% 20%, rgba(255,255,255,0.9), transparent),
-    radial-gradient(8px 8px at 30% 70%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(5px 5px at 50% 40%, rgba(255,255,255,1), transparent),
-    radial-gradient(7px 7px at 70% 15%, rgba(255,255,255,0.9), transparent),
-    radial-gradient(6px 6px at 85% 60%, rgba(255,255,255,0.85), transparent),
-    radial-gradient(9px 9px at 20% 85%, rgba(255,255,255,1), transparent),
-    radial-gradient(7px 7px at 60% 90%, rgba(255,255,255,0.9), transparent),
-    radial-gradient(5px 5px at 90% 30%, rgba(255,255,255,0.8), transparent);
+    radial-gradient(5px 5px at 15% 25%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(6px 6px at 35% 70%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(4px 4px at 60% 40%, rgba(255,255,255,1), transparent),
+    radial-gradient(5px 5px at 80% 20%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(6px 6px at 25% 85%, rgba(255,255,255,1), transparent),
+    radial-gradient(4px 4px at 75% 75%, rgba(255,255,255,0.8), transparent);
 
-  animation: twinkle 2s infinite alternate ease-in-out;
-  filter: drop-shadow(0 0 6px white);
+  animation: floatStars 40s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.8));
 }
 
-/* SEGUNDA CAPA PARA MÁS CANTIDAD */
+/* SEGUNDA CAPA MÁS SUAVE */
 body::after{
   content:"";
   position:fixed;
@@ -269,22 +267,30 @@ body::after{
   pointer-events:none;
 
   background:
-    radial-gradient(rgba(255,255,255,0.7) 3px, transparent 4px);
+    radial-gradient(rgba(255,255,255,0.3) 2px, transparent 3px);
 
-  background-size: 120px 120px;
+  background-size: 180px 180px;
 
-  animation: twinkle2 3s infinite alternate ease-in-out;
+  animation: floatStarsSlow 80s linear infinite;
 }
 
-/* ANIMACIONES */
-@keyframes twinkle{
-  from{ opacity:0.5; }
-  to{ opacity:1; }
+/* MOVIMIENTO LENTO */
+@keyframes floatStars{
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform: translateY(-200px);
+  }
 }
 
-@keyframes twinkle2{
-  from{ opacity:0.3; }
-  to{ opacity:0.8; }
+@keyframes floatStarsSlow{
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform: translateY(-150px);
+  }
 }
 
 
@@ -320,5 +326,6 @@ body::after{
   background-color: #d9534f;
   color: #fff;
 }
+
 
 
