@@ -15,10 +15,13 @@ $(document).ready(function () {
     closeEnvelope();
   });
 
-  function openEnvelope() {
+    // Solo si NO está abierta todavía
+  if (!envelope.hasClass("open")) {
     envelope.addClass("open").removeClass("close");
     createShootingStar();
   }
+
+}
 
   function closeEnvelope() {
     envelope.addClass("close").removeClass("open");
@@ -37,3 +40,4 @@ $(document).ready(function () {
     },8000);
   }
 });
+
