@@ -4,34 +4,36 @@ $(document).ready(function () {
   var btn_reset = $("#reset");
 
   envelope.click(function () {
-    open();
-  });
-  btn_open.click(function () {
-    open();
-  });
-  btn_reset.click(function () {
-    close();
+    openEnvelope();
   });
 
-  function open() {
+  btn_open.click(function () {
+    openEnvelope();
+  });
+
+  btn_reset.click(function () {
+    closeEnvelope();
+  });
+
+  function openEnvelope() {
     envelope.addClass("open").removeClass("close");
-     createShootingStar(); // 🌠 estrella al abrir
+    createShootingStar();
   }
-  
-  function close() {
+
+  function closeEnvelope() {
     envelope.addClass("close").removeClass("open");
   }
-  
-function createShootingStar(){
-  const star = document.createElement("div");
-  star.classList.add("shooting-star");
 
-  // posición vertical aleatoria
-  star.style.top = Math.random() * 30 + 10 + "%";
+  function createShootingStar(){
+    const star = document.createElement("div");
+    star.className = "shooting-star";
 
-  document.body.appendChild(star);
+    star.style.top = Math.random() * 30 + 10 + "%";
 
-  setTimeout(function(){
-    star.remove();
-  },1800);
-}
+    document.body.appendChild(star);
+
+    setTimeout(function(){
+      star.remove();
+    },1800);
+  }
+});
