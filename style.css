@@ -348,7 +348,7 @@ body::after{
     0 0 80px rgba(180,220,255,1),
     0 0 120px rgba(120,180,255,0.8);
 
-  animation: shoot 5s cubic-bezier(.2,.6,.3,1) forwards;
+  animation: shoot 8s cubic-bezier(.2,.6,.3,1) forwards;
 }
 
 @keyframes shoot{
@@ -391,4 +391,5 @@ body::after{
 
   filter:blur(4px);
 }
+
 
