@@ -347,7 +347,7 @@ body::after{
     0 0 20px white,
     0 0 40px rgba(180,220,255,1);
 
-  animation: shoot 1.8s cubic-bezier(.2,.6,.3,1) forwards;
+animation: shoot 8s cubic-bezier(.2,.6,.3,1) forwards;
 }
 
 /* COLA FANTASIOSA */
@@ -389,3 +389,4 @@ body::after{
     opacity:0;
   }
 }
+
