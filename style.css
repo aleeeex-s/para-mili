@@ -236,11 +236,11 @@ body{
   align-items:center;
   justify-content:center;
   font-family:Arial, sans-serif;
-  background:#081c2d; /* azul marino profundo */
+  background:#071829; /* azul marino profundo */
   overflow:hidden;
 }
 
-/* Capa de luces */
+/* CAPA DE LEDS GRANDES */
 body::before{
   content:"";
   position:fixed;
@@ -248,26 +248,45 @@ body::before{
   pointer-events:none;
 
   background-image:
-    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(2px 2px at 70% 60%, rgba(255,255,255,0.7), transparent),
-    radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.9), transparent),
-    radial-gradient(2px 2px at 85% 20%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(2px 2px at 10% 70%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(2px 2px at 55% 15%, rgba(255,255,255,0.7), transparent),
-    radial-gradient(2px 2px at 90% 85%, rgba(255,255,255,0.9), transparent);
+    radial-gradient(6px 6px at 10% 20%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(8px 8px at 30% 70%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(5px 5px at 50% 40%, rgba(255,255,255,1), transparent),
+    radial-gradient(7px 7px at 70% 15%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(6px 6px at 85% 60%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(9px 9px at 20% 85%, rgba(255,255,255,1), transparent),
+    radial-gradient(7px 7px at 60% 90%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(5px 5px at 90% 30%, rgba(255,255,255,0.8), transparent);
 
-  animation: twinkle 4s infinite alternate;
+  animation: twinkle 2s infinite alternate ease-in-out;
+  filter: drop-shadow(0 0 6px white);
 }
 
-/* Animación LED */
+/* SEGUNDA CAPA PARA MÁS CANTIDAD */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+
+  background:
+    radial-gradient(rgba(255,255,255,0.7) 3px, transparent 4px);
+
+  background-size: 120px 120px;
+
+  animation: twinkle2 3s infinite alternate ease-in-out;
+}
+
+/* ANIMACIONES */
 @keyframes twinkle{
-  from{
-    opacity:0.4;
-  }
-  to{
-    opacity:1;
-  }
+  from{ opacity:0.5; }
+  to{ opacity:1; }
 }
+
+@keyframes twinkle2{
+  from{ opacity:0.3; }
+  to{ opacity:0.8; }
+}
+
 
 .envlope-wrapper {
   height: 380px;
@@ -301,4 +320,5 @@ body::before{
   background-color: #d9534f;
   color: #fff;
 }
+
 
