@@ -333,60 +333,41 @@ body::after{
 
 .shooting-star{
   position:fixed;
-  top:15%;
-  left:-300px;
-  width:4px;
-  height:4px;
+  top:10%;
+  left:-400px;
+  width:8px;
+  height:8px;
   background:white;
   border-radius:50%;
   pointer-events:none;
-  z-index:9999;
+  z-index:1;
 
   box-shadow:
-    0 0 10px white,
     0 0 20px white,
-    0 0 40px rgba(180,220,255,1);
+    0 0 40px white,
+    0 0 80px rgba(180,220,255,1),
+    0 0 120px rgba(120,180,255,0.8);
 
-animation: shoot 8s cubic-bezier(.2,.6,.3,1) forwards;
+  animation: shoot 5s cubic-bezier(.2,.6,.3,1) forwards;
 }
 
-/* COLA FANTASIOSA */
+/* COLA ÉPICA */
 .shooting-star::after{
   content:"";
   position:absolute;
   top:50%;
-  left:-250px;
+  left:-400px;
   transform:translateY(-50%);
-  width:250px;
-  height:3px;
+  width:400px;
+  height:6px;
 
   background:linear-gradient(
     to right,
     transparent,
-    rgba(180,220,255,0.4),
+    rgba(120,180,255,0.4),
+    rgba(180,220,255,0.8),
     white
   );
 
-  filter:blur(2px);
+  filter:blur(4px);
 }
-
-@keyframes shoot{
-  0%{
-    transform:translate(0,0) scale(1);
-    opacity:0;
-  }
-
-  10%{
-    opacity:1;
-  }
-
-  80%{
-    opacity:1;
-  }
-
-  100%{
-    transform:translate(140vw,70vh) scale(1.2);
-    opacity:0;
-  }
-}
-
